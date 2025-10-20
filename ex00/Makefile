@@ -16,7 +16,7 @@ INCLUDES    = -I$(INC_DIR)
 RM          = rm -rf
 
 # Output file name
-NAME        = bsp
+NAME        = claptrap
 
 # Directories
 INC_DIR     = ./
