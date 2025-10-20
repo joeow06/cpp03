@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:01:39 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 00:46:10 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 02:36:14 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ class ClapTrap {
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		std::string getName(void);
-		unsigned int getHitPt(void);
-		unsigned int getEnergyPt(void);
-		unsigned int getAtkDmg(void);
+		unsigned int getHitPt(void) const;
+		unsigned int getEnergyPt(void) const;
+		unsigned int getAtkDmg(void) const;
 		void deductEnergy(void);
 } ;
 

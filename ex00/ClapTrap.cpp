@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:11:51 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 01:26:56 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 02:36:32 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ ClapTrap::ClapTrap(std::string _name) : name(_name), hitPt(defHitPt),
 }
 
 std::string ClapTrap::getName(void) {return (name);}
-unsigned int ClapTrap::getHitPt(void) {return (hitPt);}
-unsigned int ClapTrap::getEnergyPt(void) {return (energyPt);}
-unsigned int ClapTrap::getAtkDmg(void) {return (atkDmg);}
+unsigned int ClapTrap::getHitPt(void) const {return (hitPt);}
+unsigned int ClapTrap::getEnergyPt(void) const {return (energyPt);}
+unsigned int ClapTrap::getAtkDmg(void) const {return (atkDmg);}
 
 void ClapTrap::attack(const std::string& target)
 {
