@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:00:37 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 01:29:13 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 01:00:06 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,43 +21,26 @@ void print_status(ClapTrap &a)
 
 int main(void)
 {
-	std::cout << "----------- TEST 1 ----------" << std::endl;
 	ClapTrap joe("Joe");
 	ClapTrap ren("Ren");
+	
 	print_status(joe);
 	print_status(ren);
-	joe.attack(ren.getName());
-	ren.takeDamage(1);
-	ren.beRepaired(2);
+	joe.attack("Ren");
+	ren.beRepaired(10);
 	print_status(joe);
 	print_status(ren);
-	std::cout << "-----------------------------\n" << std::endl;
 
-	std::cout << "----------- TEST 2 ----------" << std::endl;
 	ClapTrap ben = ren;
 	print_status(ben);
-	ClapTrap ken("Ken");
-	print_status(ken);
-	for (int i = 0; i < 10; i++)
-		ken.attack(ben.getName());
-	ken.attack("TESTTESTTEST");
-	std::cout << "-----------------------------\n" << std::endl;
 
-	std::cout << "----------- TEST 3 ----------" << std::endl;
+	ClapTrap ken("Ken");
+	for (int i = 0; i < 10; i++)
+		ken.attack("Joe");
+	ken.attack("TESTTESTTEST");
+
 	ClapTrap bacon("Bacon");
 	for (int i = 0; i < 10; i++)
 		bacon.beRepaired(10);
-	print_status(bacon);
 	bacon.beRepaired(100);
-	std::cout << "-----------------------------\n" << std::endl;
-
-	std::cout << "----------- TEST 4 ----------" << std::endl;
-	ClapTrap tim("Tim");
-	print_status(tim);
-	tim.takeDamage(100);
-	print_status(tim);
-	tim.attack(bacon.getName());
-	tim.beRepaired(10);
-	tim.takeDamage(1);
-	std::cout << "-----------------------------\n" << std::endl;
 }
