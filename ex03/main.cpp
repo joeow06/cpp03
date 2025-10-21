@@ -6,14 +6,15 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:00:37 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 21:50:58 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/22 00:52:01 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-void print_status(FragTrap &a)
+void print_status(DiamondTrap &a)
 {
 	std::cout << a.getName() << " | Hit Point: " << a.getHitPt() 
 		<< " | Energy Point: " << a.getEnergyPt() << " | Attack Damage: " 
@@ -21,17 +22,27 @@ void print_status(FragTrap &a)
 }
 
 int main(void)
-{
-	std::cout << "---------- ScavTrap Tests ----------\n" << std::endl;
-	FragTrap a("apple");
+{	
+	std::cout << "---------- DiamondTrap Tests ----------\n" << std::endl;
+	DiamondTrap a("apple");
 	print_status(a);
-	FragTrap b("banana");
+	DiamondTrap b("banana");
 	print_status(b);
 	std::cout <<std::endl;
-	
-	std::cout << "---------- highFivesGuys test ----------" << std::endl;
+
+	std::cout << "---------- guardGate() test ----------" << std::endl;
+	a.guardGate();
+	b.guardGate();
+	std::cout <<std::endl;
+
+	std::cout << "---------- highFivesGuys() test ----------" << std::endl;
 	a.highFivesGuys();
 	b.highFivesGuys();
+	std::cout <<std::endl;
+	
+	std::cout << "---------- whoAmI() test ----------" << std::endl;
+	a.whoAmI();
+	b.whoAmI();
 	std::cout <<std::endl;
 
 	std::cout << "---------- Attack() ----------" << std::endl;
@@ -41,14 +52,14 @@ int main(void)
 	std::cout <<std::endl;
 
 	std::cout << "---------- Copy Constructor ----------" << std::endl;
-	FragTrap c(a);
+	DiamondTrap c(a);
 	print_status(c);
 	c.takeDamage(10000);
 	print_status(c);
 	std::cout <<std::endl;
 
 	std::cout << "---------- Copy Assignment Operator ----------" << std::endl;
-	FragTrap d;
+	DiamondTrap d;
 	d = a;
 	print_status(d);
 	std::cout <<std::endl;
@@ -74,7 +85,7 @@ int main(void)
 	std::cout << "---------- Energy depletion test ----------" << std::endl;
 	print_status(b);
 	std::cout << b.getName() << " uses all its energy!" <<std::endl;
-	for (unsigned int i = 0; i < 100; i++)
+	for (unsigned int i = 0; i < 50; i++)
 		b.attack("dummy");
 	print_status(b);
 	std::cout << b.getName() << " tries to do all sorts of stuff after it has no energy..." <<std::endl;
@@ -85,24 +96,8 @@ int main(void)
 	std::cout <<std::endl;
 	
 	std::cout << "---------- Virtual Destructor test ----------" << std::endl;
-	ClapTrap *heapFrag = new FragTrap("HeapScav");
-	heapFrag->attack("random guy");
-	delete heapFrag;
+	ClapTrap *heapDiamond = new DiamondTrap("HeapScav");
+	heapDiamond->attack("random guy");
+	delete heapDiamond;
 	std::cout <<std::endl;
-	
 }
-
-/*
-Without virtual destructor:
-When we have BaseClass pointers to DerivedClass 
-objects instances, if we try to delete DerivedClass
-objects using BaseClass pointers, only BaseClass
-destructor is going it run.
-
-Making BaseClass destructor virtual guarantees that 
-the DerivedClass object is destructed properly
-
-Also as a guideline, if we have a virtual function
-in a class, we should also add a virtual destructor
-to ensure against any surprises later on
-*/

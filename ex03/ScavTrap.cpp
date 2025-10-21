@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 03:25:01 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 21:00:13 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/22 00:22:02 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 	hitPt = 100;
 	energyPt = 50;
 	atkDmg = 20;
-	std::cout << "ScavTrap " << this->getName() << " is created" << std::endl;
+	std::cout << "ScavTrap " << name << " is created" << std::endl;
 }
 
 void ScavTrap::guardGate()

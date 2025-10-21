@@ -11,12 +11,12 @@
 
 # Compiler and flags
 CXX         = c++
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 INCLUDES    = -I$(INC_DIR)
 RM          = rm -rf
 
 # Output file name
-NAME        = fragtrap
+NAME        = diamondtrap
 
 # Directories
 INC_DIR     = ./

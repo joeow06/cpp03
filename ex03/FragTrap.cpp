@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 03:25:01 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 21:39:17 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/22 00:23:59 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ FragTrap::FragTrap(const std::string name) : ClapTrap(name)
 	hitPt = 100;
 	energyPt = 100;
 	atkDmg = 30;
-	std::cout << "FragTrap " << this->getName() << " is created" << std::endl;
+	std::cout << "FragTrap " << name << " is created" << std::endl;
 }
 
 void FragTrap::highFivesGuys()
