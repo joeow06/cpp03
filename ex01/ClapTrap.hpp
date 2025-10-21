@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:01:39 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 13:49:06 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 21:00:39 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string name;
 		unsigned int hitPt;
 		unsigned int energyPt;
@@ -40,10 +40,6 @@ class ClapTrap {
 		unsigned int getEnergyPt(void);
 		unsigned int getAtkDmg(void);
 		void deductEnergy(void);
-
-		void setHitPoint(unsigned int amount);
-		void setEnergyPoint(unsigned int amount);
-		void setAtkDmg(unsigned int amount);
 } ;
 
 #endif

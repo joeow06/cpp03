@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:11:51 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 04:07:17 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 20:59:11 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,3 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 
 void ClapTrap::deductEnergy(void) { energyPt -= 1;}
-
-void ClapTrap::setHitPoint(unsigned int amount) {hitPt = amount;}
-void ClapTrap::setEnergyPoint(unsigned int amount) {energyPt = amount;}
-void ClapTrap::setAtkDmg(unsigned int amount) {atkDmg = amount;}
