@@ -11,7 +11,7 @@
 
 # Compiler and flags
 CXX         = c++
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -Wshadow
 INCLUDES    = -I$(INC_DIR)
 RM          = rm -rf
 
