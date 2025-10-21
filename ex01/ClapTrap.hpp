@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:01:39 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 00:46:10 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 13:49:06 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ class ClapTrap {
 		static const unsigned int defAtkDmg = 0;
 	
 		ClapTrap();
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap(const ClapTrap &other);
 		ClapTrap& operator=(const ClapTrap &other);
 		ClapTrap(const std::string _name);
 		
-		void attack(const std::string& target);
+		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		std::string getName(void);
@@ -40,6 +40,10 @@ class ClapTrap {
 		unsigned int getEnergyPt(void);
 		unsigned int getAtkDmg(void);
 		void deductEnergy(void);
+
+		void setHitPoint(unsigned int amount);
+		void setEnergyPoint(unsigned int amount);
+		void setAtkDmg(unsigned int amount);
 } ;
 
 #endif

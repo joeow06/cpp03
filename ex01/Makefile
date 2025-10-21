@@ -16,7 +16,7 @@ INCLUDES    = -I$(INC_DIR)
 RM          = rm -rf
 
 # Output file name
-NAME        = claptrap
+NAME        = scavtrap
 
 # Directories
 INC_DIR     = ./

@@ -6,13 +6,13 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:00:37 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 01:00:06 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 14:07:00 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-void print_status(ClapTrap &a)
+void print_status(ScavTrap &a)
 {
 	std::cout << a.getName() << " | Hit Point: " << a.getHitPt() 
 		<< " | Energy Point: " << a.getEnergyPt() << " | Attack Damage: " 
@@ -21,26 +21,37 @@ void print_status(ClapTrap &a)
 
 int main(void)
 {
-	ClapTrap joe("Joe");
-	ClapTrap ren("Ren");
+	ScavTrap a("apple");
+	print_status(a);
 	
-	print_status(joe);
-	print_status(ren);
-	joe.attack("Ren");
-	ren.beRepaired(10);
-	print_status(joe);
-	print_status(ren);
+	ScavTrap b("banana");
+	print_status(b);
+	a.guardGate();
+	a.attack(b.getName());
+	b.takeDamage(20);
+	print_status(b);
 
-	ClapTrap ben = ren;
-	print_status(ben);
+	ScavTrap c(a);
+	print_status(c);
+	c.takeDamage(10000);
 
-	ClapTrap ken("Ken");
-	for (int i = 0; i < 10; i++)
-		ken.attack("Joe");
-	ken.attack("TESTTESTTEST");
-
-	ClapTrap bacon("Bacon");
-	for (int i = 0; i < 10; i++)
-		bacon.beRepaired(10);
-	bacon.beRepaired(100);
+	//test virtual destructor
+	ClapTrap *heapScav = new ScavTrap("HeapScav");
+	heapScav->attack("random guy");
+	delete heapScav;
 }
+
+/*
+Without virtual destructor:
+When we have BaseClass pointers to DerivedClass 
+objects instances, if we try to delete DerivedClass
+objects using BaseClass pointers, only BaseClass
+destructor is going it run.
+
+Making BaseClass destructor virtual guarantees that 
+the DerivedClass object is destructed properly
+
+Also as a guideline, if we have a virtual function
+in a class, we should also add a virtual destructor
+to ensure against any surprises later on
+*/
