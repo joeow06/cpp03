@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:00:37 by jow               #+#    #+#             */
-/*   Updated: 2025/10/21 21:29:40 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/21 21:51:56 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ int main(void)
 	print_status(c);
 	c.takeDamage(10000);
 	print_status(c);
+	std::cout <<std::endl;
+
+	std::cout << "---------- Copy Assignment Operator ----------" << std::endl;
+	ScavTrap d;
+	d = a;
+	print_status(d);
 	std::cout <<std::endl;
 
 	std::cout << "---------- Take damage after death test(shouldnt work) ----------" << std::endl;
