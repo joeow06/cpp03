@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:11:51 by jow               #+#    #+#             */
-/*   Updated: 2025/10/24 01:33:50 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/24 01:51:13 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 		this->hitPt = other.hitPt;
 		this->energyPt = other.energyPt;
 		this->atkDmg = other.atkDmg;
-		std::cout << "ClapTrap assignment operator called" << std::endl;
 	}
+	std::cout << "ClapTrap assignment operator called" << std::endl;
 	return (*this);
 }
 
